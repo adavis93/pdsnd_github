@@ -247,7 +247,7 @@ def main():
         start0=0
         end5=5
         while True:
-            raw_data = input('Do you want to see raw data?  Yes/No ').lower()
+            raw_data = input('Do you want to see table data?  Yes/No ').lower()
             if raw_data == 'yes':
                 print(df.iloc[start0:end5])
                 start0=start0+5
