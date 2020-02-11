@@ -1,15 +1,18 @@
 ### Date created
-Include the date you created this project and README file.
+February 11th, 2020
 
 ### Project Title
-Replace the Project Title
+Bikeshare Project
+
 
 ### Description
-Describe what your project is about and what it does
+Tracks statistics for bikeshare info in new york, chicago and washington
 
 ### Files used
-Include the files used
+bikeshare.py
+new_york_city.csv
+washington.csv
+chicago.csv
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
