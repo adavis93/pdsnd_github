@@ -50,17 +50,17 @@ def get_filters():
         elif sort_month=='no' :
             sort_month=False
         else:
-            print('Please enter a valid choice')
+            print('Please enter a valid choice.')
             continue
         break
 
     while 3:
         if sort_month:
             print('Which month would you like to sort by?')
-            month = input('January, February, March, April, May, June ').lower()
+            month = input('January, February, March, April, May, June: ').lower()
             print()
             if month not in MONTH_DATA:
-                print('Please input a valid month')
+                print('Please input a valid month.')
                 continue
             month = MONTH_DATA[month]
         else:
@@ -74,7 +74,7 @@ def get_filters():
         elif sort_day=='no' :
             sort_day=False
         else:
-            print('Please enter a valid choice')
+            print('Please enter a valid choice.')
             continue
         break
 
@@ -84,7 +84,7 @@ def get_filters():
             day = input('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday ').lower()
             print()
             if day not in DAY_DATA:
-                print('Please input a valid day')
+                print('Please input a valid day.')
                 continue
             day = DAY_DATA[day]
         else:
@@ -131,19 +131,19 @@ def time_stats(df):
     for num in MONTH_DATA:
         if MONTH_DATA[num]==most_common_month:
             most_common_month = num.title()
-    print('The most common month for traveling is {}'.format(most_common_month))
+    print('The most common month for traveling is: {}'.format(most_common_month))
 
     # TO DO: display the most common day of week
     most_common_day = df['day_of_week'].mode()[0]
     for num in DAY_DATA:
         if DAY_DATA[num]==most_common_day:
             most_common_day = num.title()
-    print('The most common day for traveling is {}'.format(most_common_day))
+    print('The most common day for traveling is: {}'.format(most_common_day))
 
     # TO DO: display the most common start hour
     df['hour']=pd.to_datetime(df['Start Time']).dt.hour
     most_common_hour = df['hour'].mode()[0]
-    print('The most common hour for traveling is {}'.format(most_common_hour))
+    print('The most common hour for traveling is: {}'.format(most_common_hour))
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -158,16 +158,16 @@ def station_stats(df):
 
     # TO DO: display most commonly used start station
     print()
-    print('The most commonly used start station was {}'.format(df['Start Station'].mode()[0]))
+    print('The most commonly used start station was: {}'.format(df['Start Station'].mode()[0]))
 
     # TO DO: display most commonly used end station
     print()
-    print('The most commonly used end station was {}'.format(df['End Station'].mode()[0]))
+    print('The most commonly used end station was: {}'.format(df['End Station'].mode()[0]))
 
     # TO DO: display most frequent combination of start station and end station trip
     print()
     most_common_combo = df['Start Station'] + ' to ' + df['End Station']
-    print('The most commonly used combination of Start and End stations is {}'.format(most_common_combo.mode()[0]))
+    print('The most commonly used combination of Start and End stations is: {}'.format(most_common_combo.mode()[0]))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
